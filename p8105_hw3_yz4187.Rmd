@@ -17,7 +17,7 @@ library(p8105.datasets)
 ```{r, eval=FALSE}
 instacart = p8105.datasets::instacart %>% 
   janitor::clean_names()
-  
+
 data("instacart")
 skimr::skim(instacart)
 ```
@@ -68,7 +68,7 @@ instacart %>%
 
 *Question: Make a table showing the mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered on each day of the week; format this table for human readers (i.e. produce a 2 x 7 table).*
 
-```{r table showing mean hour}
+```{r table showing mean hour, message=FALSE}
 instacart %>%
   filter(product_name %in% c("Pink Lady Apples","Coffee Ice Cream"))  %>%
   select(product_name, order_dow, order_hour_of_day) %>% 
